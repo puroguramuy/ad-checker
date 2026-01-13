@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ตรวจโฆษณาเกินจริง</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f6f8; }
+        .box {
+            max-width: 600px;
+            margin: 80px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>🔍 ระบบตรวจโฆษณาเกินจริง</h2>
+
+    <form action="/check-web" method="post">
+        <label>วางข้อความโฆษณา หรือ URL:</label><br><br>
+        <textarea name="content" required></textarea><br><br>
+        <button type="submit">ตรวจสอบ</button>
+    </form>
+
+    {% if result %}
+        <hr>
+        <h3>ผลการตรวจ</h3>
+        <p><b>เข้าข่ายโฆษณาเกินจริง:</b> {{ result.is_exaggerated }}</p>
+        <p><b>คำที่พบ:</b> {{ result.matched_keywords }}</p>
+    {% endif %}
+</div>
+</body>
+</html>
