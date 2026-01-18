@@ -4,6 +4,7 @@ from openai import OpenAI
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+
 def analyze_text(text: str, rules: dict):
     prompt = f"""
 คุณเป็นผู้เชี่ยวชาญด้านโฆษณาประกันในประเทศไทย
@@ -25,7 +26,7 @@ def analyze_text(text: str, rules: dict):
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt}],
-        temperature=0
+        temperature=0,
     )
 
     return json.loads(response.choices[0].message.content)
