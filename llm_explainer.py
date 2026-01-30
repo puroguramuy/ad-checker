@@ -6,14 +6,14 @@ import os
 # ==============================================================================
 
 # ใส่ API Key ของนายตรงนี้
-GOOGLE_API_KEY = "AIzaSyCYMyizSdMU8Lk_S5ZxulZl4Qnhc5aAcNQ" 
+GOOGLE_API_KEY = "AIzaSyB9aUexVTEUkHTXlK9MPKve4LMQ5yAmKqw" 
 
 # ตั้งค่าโมเดล AI
 try:
     genai.configure(api_key=GOOGLE_API_KEY)
     # ใช้ 'gemini-pro' เป็นตัวมาตรฐาน (เสถียรที่สุด)
     # หรือถ้าอยากลองของใหม่ใช้ 'gemini-1.5-flash' ก็ได้ถ้า key รองรับ
-    model = genai.GenerativeModel('gemini-pro') 
+    model = genai.GenerativeModel('gemini-flash-latest')
 except Exception as e:
     print(f"⚠️ ตั้งค่า AI ไม่สำเร็จ: {e}")
 
