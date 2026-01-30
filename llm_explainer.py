@@ -13,7 +13,7 @@ try:
     genai.configure(api_key=GOOGLE_API_KEY)
     # ใช้ 'gemini-pro' เป็นตัวมาตรฐาน (เสถียรที่สุด)
     # หรือถ้าอยากลองของใหม่ใช้ 'gemini-1.5-flash' ก็ได้ถ้า key รองรับ
-    model = genai.GenerativeModel('gemini-flash-latest')
+    model = genai.GenerativeModel('gemini-1.5-flash') # ลองเปลี่ยนมาใช้ตัวนี้
 except Exception as e:
     print(f"⚠️ ตั้งค่า AI ไม่สำเร็จ: {e}")
 
