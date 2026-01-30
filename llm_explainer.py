@@ -10,7 +10,7 @@ GOOGLE_API_KEY = "AIzaSyB9aUexVTEUkHTXlK9MPKve4LMQ5yAmKqw"
 
 # ตั้งค่าโมเดล AI
 try:
-    genai.configure(api_key=GOOGLE_API_KEY)
+    model = genai.GenerativeModel('models/gemini-1.5-flash')
     # ใช้ 'gemini-pro' เป็นตัวมาตรฐาน (เสถียรที่สุด)
     # หรือถ้าอยากลองของใหม่ใช้ 'gemini-1.5-flash' ก็ได้ถ้า key รองรับ
     model = genai.GenerativeModel('gemini-1.5-flash') # ลองเปลี่ยนมาใช้ตัวนี้
